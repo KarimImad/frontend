@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     safeView: {
         flex: 1,
         backgroundColor: AppColors.background.primary,
-        marginTop: Platform.OS === "ios" ? 30 : 0,
+        marginTop: Platform.OS === "android" ? 30 : 0,
     },
     container: {
         flex: 1,
