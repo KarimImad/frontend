@@ -27,7 +27,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="shop"
         options={{
-          title: 'Explore',
+          title: 'Shop',
           tabBarIcon: ({ color }) => (
           <Foundation size={28} name="shopping-cart" color={color} />
           ),
@@ -42,6 +42,9 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen name="search" options={{href:null}} />
+      <Tabs.Screen name="favorites" options={{href:null}} />
+      <Tabs.Screen name="cart" options={{href:null}} />
     </Tabs>
   );
 }
