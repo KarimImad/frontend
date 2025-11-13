@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppColors } from '@/constants/theme';
 
 //sert de container sur pour l'affichage de contenu
-const wrapper = ({children} : {children: React.ReactNode}) => {
+const Wrapper = ({children} : {children: React.ReactNode}) => {
   return (
     // prend en compte les zones à éviter sur les differents appareils
     <SafeAreaView style={styles.safeView}>
@@ -17,7 +17,7 @@ const wrapper = ({children} : {children: React.ReactNode}) => {
   )
 }
 
-export default wrapper
+export default Wrapper
 
 const styles = StyleSheet.create({
     safeView: {

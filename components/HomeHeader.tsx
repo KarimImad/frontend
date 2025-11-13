@@ -10,7 +10,7 @@ const HomeHeader = () => {
     const router = useRouter()
 
   return (
-    <SafeAreaView style = {styles.header}>
+    <SafeAreaView style = {styles.container}>
         <View style={styles.header}>
             <Logo/>
             <View style={styles.iconContainer}>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         marginTop: Platform.OS === "android" ? 35 : 0,
     },
     header: {
-        flexDirection: "row",
+        flexDirection: "row", 
         justifyContent: "space-between",
         alignItems: "center",
         borderBottomWidth: 1,
