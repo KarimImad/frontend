@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import {Ionicons, AntDesign, Foundation, Feather} from "@expo/vector-icons";
+import { Ionicons, Foundation, Feather } from '@expo/vector-icons';
 import { HapticTab } from '@/components/haptic-tab';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
@@ -11,7 +11,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint, // affiche l'icon de la tab où on est en bleu quand on commente cette ligne
         headerShown: false,
         tabBarButton: HapticTab,
       }}>
@@ -20,7 +20,7 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => (
-          <Ionicons size={28} name="home" color={color} />
+            <Ionicons size={28} name="home" color={color} />
           ),
         }}
       />
@@ -29,7 +29,7 @@ export default function TabLayout() {
         options={{
           title: 'Shop',
           tabBarIcon: ({ color }) => (
-          <Foundation size={28} name="shopping-cart" color={color} />
+            <Foundation size={28} name="shopping-cart" color={color} />
           ),
         }}
       />
@@ -38,13 +38,14 @@ export default function TabLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color }) => (
-          <Feather size={28} name="user" color={color} />
+            <Feather size={28} name="user" color={color} />
           ),
         }}
       />
-      <Tabs.Screen name="search" options={{href:null}} />
-      <Tabs.Screen name="favorites" options={{href:null}} />
-      <Tabs.Screen name="cart" options={{href:null}} />
+      <Tabs.Screen name="search" options={{ href: null }} /> {/* pour que ca ne s'affiche pas sur le tabs */}
+      <Tabs.Screen name="cart" options={{ href: null }} />
+      <Tabs.Screen name="favorites" options={{ href: null }} />
+      <Tabs.Screen name="product/[id]" options={{ href: null, tabBarStyle: {display: 'none'}}} /> {/* tabbarstyle en none enleve la bar en bas */}
     </Tabs>
   );
 }

@@ -136,7 +136,7 @@ export default function HomeScreen() {
                   <Text>Voir Tout</Text>
                 </TouchableOpacity>
               </View>
-              <View>
+              <View style={styles.productsGrid}>
                 {products?.map((product) => (
                   <View key={product.id} style={styles.productContainer}>
                     <ProductCard
@@ -215,5 +215,26 @@ categoryText: {
   color: AppColors.text.primary,
   textTransform: 'capitalize',
 },
+productsGrid: {
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between',
+  paddingRight: 20,
+},
+featuredSection: {
+  marginVertical:16,
+},
+newestSection: {
+  marginVertical: 16,
+  marginBottom: 32,
+},
+productContainer: {
+  width: "48%",
+},
+seeAllText: {
+  fontFamily: 'Inter-Medium',
+  fontSize: 14,
+  color: AppColors.primary[500],
+}
 
 });
