@@ -176,6 +176,7 @@ const ProfileScreen = () => {
               variant='outline'
               fullWidth style={styles.logoutButton}
               textStyle={styles.logoutButtonText}
+              disabled={isLoading}
             />
           </View>
         </View>

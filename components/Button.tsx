@@ -7,7 +7,7 @@ interface ButtonProps {
     onPress: () => void;
     size?: 'small' | 'medium' | 'large';
     variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-    disaled?: boolean;
+    disabled?: boolean;
     fullWidth?: boolean;
     loading?: boolean;
     style?: StyleProp<ViewStyle>;
@@ -19,7 +19,7 @@ const Button:React.FC<ButtonProps> = ({
     variant='primary',
     size='medium',
     fullWidth=false,
-    disaled=false,
+    disabled=false,
     loading=false,
     style,
     textStyle,
@@ -29,7 +29,7 @@ const Button:React.FC<ButtonProps> = ({
         styles[variant],
         styles[size],
         fullWidth && styles.fullWidth,
-        disaled && styles.disabled,
+        disabled && styles.disabled,
         style
     ];
 
@@ -43,7 +43,7 @@ const Button:React.FC<ButtonProps> = ({
         <TouchableOpacity
         style={buttonStyle}
         onPress={onPress}
-        disabled={disaled || loading}
+        disabled={disabled || loading}
         activeOpacity={0.8}
         >
             {loading ? (
